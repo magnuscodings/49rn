@@ -143,11 +143,15 @@ const StyleBall = StyleSheet.create({
     justifyContent: 'center',
   }, ballPlus: {
     position: 'relative',
-    paddingTop:10,
+    paddingLeft: 4,
+    paddingRight: 4,
+    paddingTop:15,
     alignItems: 'center',
     justifyContent: 'center',
   },
   ballImage: {
+    width:50,
+    height:50
     // Adjust the styles for the ball image as needed
   },plusImage: {
     alignContent:'center',
@@ -162,7 +166,7 @@ const StyleBall = StyleSheet.create({
     paddingRight:3,
     paddingBottom:2,
     color: 'black', // Adjust the text color as needed
-    fontSize: 19, // Adjust the font size as needed
+    fontSize: 24, // Adjust the font size as needed
   }, ballContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -182,8 +186,9 @@ const StyleBall = StyleSheet.create({
     backgroundColor: 'white',
   },
   ballText: {
-    marginTop: 5,
-    fontSize: 10,
+    marginTop: 2,
+    fontSize: 13,
+    color: 'gray',
     textAlign: 'center',
   },
 });

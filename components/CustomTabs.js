@@ -44,23 +44,23 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     overflow: 'hidden',
     backgroundColor: 'white',
-    borderTopLeftRadius:10,
-    borderTopRightRadius:10,
+    borderTopLeftRadius:5,
+    borderTopRightRadius:5,
   },
   tabButton: {
     flex: 1,
     alignItems: 'center',
     justifyContent:'center',
-    paddingVertical: 10,
-    height:60,
-    borderTopLeftRadius:10,
-    borderTopRightRadius:10,
+    paddingVertical: 5,
+    height:45,
+    borderTopLeftRadius:5,
+    borderTopRightRadius:5,
   },
-
   activeTab: {
     backgroundColor: '#07C160',
   },
   tabText: {
+    fontSize: 12,
     color: 'gray',
     textAlign:'center'
   },
