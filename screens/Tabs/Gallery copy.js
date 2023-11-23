@@ -228,10 +228,10 @@ const Gallery = () => {
     };
 
   
-   
   return (
+
     <>
-       <ScrollView style={{ flex: 1 }}>
+       <ScrollView  >
     <View style={{top:-30}}>
     <ImageSlider imageUrls={images} paginationBottom={35} />
 
@@ -337,50 +337,10 @@ const Gallery = () => {
         <Text style={styles.buttonText2}>2023年彩色</Text>
         </TouchableOpacity>
       </View>
-
-   {/* Horizontal ScrollView */}
-   <View style={[horizontal.buttonContainer2,{marginTop:10,paddingLeft:10}]}>
-          <ScrollView horizontal showsHorizontalScrollIndicator={false} nestedScrollEnabled={true}>
-            {/* Content inside nested ScrollView */}
-            <View style={{ width: '100%',height:40, paddingLeft:10 }}>
-                <View style={horizontal.buttonContainer2}>
-                <TouchableOpacity style={horizontal.button}>
-                  <Text style={horizontal.buttonText}>幽默猜测</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={horizontal.button}>
-                  <Text style={horizontal.buttonText}>六合图库</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={horizontal.button}>
-                  <Text style={horizontal.buttonText}>高手论坛</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={horizontal.button}>
-                  <Text style={horizontal.buttonText}>工具宝箱</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={horizontal.button}>
-                <Text style={horizontal.buttonText}>幽默猜测</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={horizontal.button}>
-                  <Text style={horizontal.buttonText}>六合图库</Text>
-                </TouchableOpacity>
-                </View>
-            </View>
-          </ScrollView>
-          <TouchableOpacity style={horizontal.button2}>
-              <Text style={horizontal.button2Text}>更多</Text>
-          </TouchableOpacity>
-        </View>
-
-
-
     </View>   
 
 
 
-
-
-
-    <View style={{ height: 400, backgroundColor: 'lightblue' }}>
-    <ScrollView nestedScrollEnabled={true}> 
     <View style={{flexDirection:'row',flexWrap:'wrap',justifyContent: 'space-between'}}>
     {imageArray.map((image, index) => (
           <View key={index} style={styles.cardContainer}>
@@ -390,8 +350,8 @@ const Gallery = () => {
          
         ))}
     </View>
-    </ScrollView>
-    </View>
+    
+   
     </ScrollView>
 
      <View style={styles.footer}>
@@ -399,8 +359,11 @@ const Gallery = () => {
         <FloaterBottom /> 
         <CustomFab />
       </View>
+
+  
     </>
  
+
     
   )
 }
@@ -426,43 +389,7 @@ const linkbutton = StyleSheet.create({
   },
 });
 
-const horizontal = StyleSheet.create({
-  button: {
-    marginRight:10,
-    backgroundColor: '#07C160',
-    borderRadius:5,
-    alignItems: 'center',
-  },
-  button2: {
-    height:35,
-    backgroundColor: '#f2f2f2',
-    borderRadius:5,
-    alignItems: 'center',
-  },
-  button2Text: {
-    paddingTop:5,
-    color: '#07C160',
-    paddingLeft:15,
-    paddingRight:15,
-    fontSize: 16,
-    textAlign: 'center',
-    fontWeight: 'normal',
-  },
-  buttonText: {
-    color: 'white',
-    paddingLeft:15,
-    paddingRight:15,
-    paddingTop:5,
-    paddingBottom:7,
-    fontSize: 16,
-    textAlign: 'center',
-    fontWeight: 'normal',
-  },
-  buttonContainer2: {
-    flexDirection: 'row',
-    width: '100%',
-  },
-});
+
 
 const styles = StyleSheet.create({
   footer: {
@@ -517,11 +444,19 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   stickycontainer:{
+    padding:10,
+    marginTop:7,
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'white',
-    marginTop:10,
+  },
+  sticky: {
+    position: 'sticky',
+    top: 0,
+    backgroundColor: 'white', // Adjust the background color as needed
+    zIndex: 1,
+    // Other styles for your sticky container when sticky
   },
   buttonContainer: {
     flexDirection: 'row',
@@ -532,7 +467,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     width: '95%',
-    marginTop:20,
+    marginTop:10
   },
   buttonContainer3: {
     flexDirection: 'row',

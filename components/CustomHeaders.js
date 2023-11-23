@@ -3,10 +3,12 @@ import React from 'react'
 
 const CustomHeaders = () => {
   return (
+    <>
     <ScrollView>
       <Text>CustomHeaders</Text>
       
     </ScrollView>
+    </>
   )
 }
 

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { SafeAreaView, StyleSheet, Text, View, TouchableOpacity, TextInput,ScrollView,FlatList } from 'react-native';
 import { Feather,AntDesign } from '@expo/vector-icons';
 import CardWithText from '../../components/CardWithText'
-const FoundIt = () => {
+export const FoundIt = () => {
   const [activeButton, setActiveButton] = useState('All'); // Initially set to 'Button 1'
   const [searchText, setSearchText] = useState('');
 
