@@ -11,8 +11,8 @@ export const Tabs = ({ apiUrl, keyname }) => {
         const response = await fetch(apiUrl);
         const result = await response.json();
         
-        console.log(result); // Log the parsed JSON data
-        console.log(keyname); // Log the provided keyname
+        // console.log(result); // Log the parsed JSON data
+        // console.log(keyname); // Log the provided keyname
 
         // Check if the requsired keys exist bsefore accessing them
         if (result && result.data && result.data.list && result.data.list[keyname]) {

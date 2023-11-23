@@ -17,11 +17,11 @@ export const Request_Balls = ({ apiUrl, keyname }) => {
         const response = await fetch(apiUrl);
         const result = await response.json();
 
-        console.log(JSON.stringify(result));
+        // console.log(JSON.stringify(result));
         if (keyname in result) {
           const dataArray = result[keyname].split(',');
           setData(dataArray);
-          console.log(data);
+          // console.log(data);
 
         } else {
           console.error(`Key '${keyname}' not found in API response.`);
@@ -114,9 +114,9 @@ export const Request_Balls = ({ apiUrl, keyname }) => {
 };
 
 
+export default Request_Balls;
 
-
-const BallWithText = ({ text, imageSource,count }) => {
+export const BallWithText = ({ text, imageSource,count }) => {
   return (
       <View>
       <View style={StyleBall.ballGroup}>
@@ -127,7 +127,7 @@ const BallWithText = ({ text, imageSource,count }) => {
       </View>
   );
 };
-const BallText = ({ }) => {
+export const BallText = ({ }) => {
   return (
       <View style={StyleBall.ballPlus}>
         <Image source={require('../../assets/icons/jiahao.png')} style={StyleBall.plusImage} />

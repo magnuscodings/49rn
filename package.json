@@ -22,6 +22,8 @@
     "react-native-circular-action-menu": "^0.5.0",
     "react-native-marquee-ab": "^1.2.6",
     "react-native-marquee-view": "^1.0.5",
+    "react-native-masonry-grid": "^0.0.3",
+    "react-native-masonry-list": "^2.16.1",
     "react-native-swiper": "^1.6.0",
     "react-native-vector-icons": "^10.0.0"
   },

@@ -21,8 +21,9 @@ LogBox.ignoreAllLogs();//Ignore all log notifications
 // TEST API
 import { Request_Balls,Request_LotteryDate } from '../../components/request/balls'; // Import the set you need
 
-import { DEFUALT_JSAM, DEFUALT_TABS } from '../../constant/ApiConstants'; // Import the set you need
+import { DEFUALT_JSAM, DEFUALT_TABS,HOME_REQUEST_AU } from '../../constant/ApiConstants'; // Import the set you need
 import { Tabs } from '../../components/request/tabs';
+import { HomeImages } from '../../components/request/homeimages';
 import { OpenLink } from '../../components/Linking';
 
 
@@ -39,6 +40,9 @@ const Gallery = () => {
     // Add more image URLs here
   ];
   
+
+  
+
   const imageArray = [
     'https://tk2.jixingkaisuo.com:4949/m/col/222/ampgt.jpg',
     'https://tk2.jixingkaisuo.com:4949/m/col/222/jx30m.jpg',
@@ -370,28 +374,37 @@ const Gallery = () => {
           </TouchableOpacity>
         </View>
 
-
-
+       
     </View>   
 
 
+         {/* <View>
+          <HomeImages apiUrl={HOME_REQUEST_AU}/>
+         </View> */}
+ 
 
 
+        <View style={{ height: 400, backgroundColor: 'white' }}>
+        <ScrollView nestedScrollEnabled={true}> 
+          <View style={StyleBall.ballContainer}>
+                {/* <HomeImages apiUrl={HOME_REQUEST_AU} keyname='k' indexs="5" /> */}
 
-
-    <View style={{ height: 400, backgroundColor: 'lightblue' }}>
-    <ScrollView nestedScrollEnabled={true}> 
-    <View style={{flexDirection:'row',flexWrap:'wrap',justifyContent: 'space-between'}}>
-    {imageArray.map((image, index) => (
-          <View key={index} style={styles.cardContainer}>
-            <Image source={{ uri: image }} style={styles.cardBackground}/>
-            <Text style={styles.cardText}>{textArray[index] }</Text>
-          </View>
-         
-        ))}
-    </View>
-    </ScrollView>
-    </View>
+            </View>
+            <View >
+          <HomeImages apiUrl={HOME_REQUEST_AU}/>
+              
+            {/* {imageArray.map((image, index) => (
+                  <View key={index} style={styles.cardContainer}>
+                    <Image source={{ uri: image }} style={styles.cardBackground}/>
+                    <Text style={styles.cardText}>{textArray[index] }</Text>
+                  </View>
+                
+                ))} */}
+                <View>
+         </View>
+            </View>
+          </ScrollView>
+        </View>
     </ScrollView>
 
      <View style={styles.footer}>
@@ -472,7 +485,7 @@ const styles = StyleSheet.create({
     right: 0,
     padding: 10,
     alignItems: 'center',
-    height:70,
+    height:57,
   },
   cardContainer: {
     padding:5,

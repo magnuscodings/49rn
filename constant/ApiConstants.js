@@ -6,6 +6,7 @@ export const DEFUALT_TABS ="https://h5.49217007.com:8443/unite49/app/index/lotte
 
 // request in home 
 
+export const HOME_REQ_2 = "https://h5.49217009.com:8443/unite49/h5/index/listPicture?lotteryType=2&pageNum=1";
 export const HOME_REQUEST_AU = "https://api.hongbaodianzi.com/unite49/app/index/uniteInfo?lotteryType=2";
 export const HOME_REQUEST_HK = "https://api.hongbaodianzi.com/unite49/app/index/uniteInfo?lotteryType=1";
 export const HOME_REQUEST_TW = "https://api.hongbaodianzi.com/unite49/app/index/uniteInfo?lotteryType=3";
