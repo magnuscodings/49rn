@@ -17,9 +17,9 @@ export const OpenLink = ({ url, linkStyle, buttonStyle, text }) => {
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: 'gray',
-    paddingVertical: 6,
-    paddingHorizontal: 15,
+    backgroundColor: 'blue',
+    paddingVertical: 5,
+    paddingHorizontal: 0,
     borderRadius: 5,
     alignItems: 'center',
   },

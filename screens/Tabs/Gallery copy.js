@@ -18,17 +18,16 @@ LogBox.ignoreAllLogs();//Ignore all log notifications
 // IMAGES
 // import { imageArray,textArray } from '../../constant/AppConstants'; // Import the set you need
 
-// TEST APIs
+// TEST API
 import { Request_Balls,Request_LotteryDate } from '../../components/request/balls'; // Import the set you need
 
-import * as link from '../../constant/ApiConstants'; // Import the set you need
+import { DEFUALT_JSAM, DEFUALT_TABS,HOME_REQUEST_AU,HOME_REQ_1 } from '../../constant/ApiConstants'; // Import the set you need
 import { Tabs } from '../../components/request/tabs';
-import { LinkRequest } from '../../components/request/getlinks';
 import { HomeImages } from '../../components/request/homeimages';
 import { OpenLink } from '../../components/Linking';
 
 
-export const Gallery = () => {
+const Gallery = () => {
 
   const images = [
     'https://jmz.qingxinmingxiang.com:4949/unite49files/amyd/2023/11/01/20231101114438--1759808080.jpg',
@@ -62,12 +61,11 @@ export const Gallery = () => {
   ];
 
 
-
   const tabNames = 
-  [ <Tabs apiUrl={link.DEFUALT_TABS} keyname="0" />,
-  <Tabs apiUrl={link.DEFUALT_TABS} keyname="1" />,
-  <Tabs apiUrl={link.DEFUALT_TABS} keyname="2" />,
-  <Tabs apiUrl={link.DEFUALT_TABS} keyname="3" />
+  [ <Tabs apiUrl={DEFUALT_TABS} keyname="0" />,
+  <Tabs apiUrl={DEFUALT_TABS} keyname="1" />,
+  <Tabs apiUrl={DEFUALT_TABS} keyname="2" />,
+  <Tabs apiUrl={DEFUALT_TABS} keyname="3" />
   ];
 
 
@@ -165,37 +163,44 @@ export const Gallery = () => {
 
 
   const tabContent = [
-    <View key={0} style={StyleBall.tab_ball}>
-      <View style={StyleBall.ball_group}>
-            <Request_Balls apiUrl={link.DEFUALT_AUBALLS} key={0} keyname='k' indexs="5" />
-      </View>
-    </View>,
-    <View key={1} style={StyleBall.tab_ball}>
-      <View style={StyleBall.ball_group}>
-            <Request_Balls apiUrl={link.DEFUALT_HKBALLS} key={1} keyname='k' indexs="5" />
-      </View>
-    </View>,
-      <View key={2} style={StyleBall.tab_ball}>
-      <View style={StyleBall.ball_group}>
-            <Request_Balls apiUrl={link.DEFUALT_TWBALLS} key={2} keyname='k' indexs="5" />
-      </View>
-    </View>,
-      <View key={3} style={StyleBall.tab_ball}>
-      <View style={StyleBall.ball_group}>
-            <Request_Balls apiUrl={link.DEFUALT_NCBALLS} key={3} keyname='k' indexs="5" />
-      </View>
-    </View>,
+                    <View key={0} style={StyleBall.tab_ball}>
+                      <View style={StyleBall.ball_group}>
+
+                        <View style={StyleBall.countdownContainer}>
+                          <Text style={StyleBall.countdownTextBlack}> 第<Text style={StyleBall.countdownTextGreen}>2023215</Text> 期</Text>
+                          <Text style={[StyleBall.countdownTextRed, styles.mr20]}> 距下期开奖:12:34:01</Text>
+                          <Text style={StyleBall.countdownTextGreen}>查看历史记录</Text>
+                        </View>
+
+                          <View style={StyleBall.ballContainer}>
+                            <Request_Balls apiUrl={DEFUALT_JSAM} keyname='k' indexs="5" />
+                          </View>
+
+                          <View style={StyleBall.cameraContainer}>
+                            <Image source={require('../../assets/icons/ic_camera.webp')} style={[StyleBall.ic_camera]} />
+                            <Text style={[StyleBall.cameraTextRed]}> 第2023324期 2023/11/20"星期- 21点30分</Text>
+                            <Image source={require('../../assets/icons/ic_full.webp')} style={[StyleBall.ic_full, styles.mr40 ]} />
+                          </View>
+                      </View>
+
+                    </View>,
+
+                      <View key={1}  style={styles.tab_content}>
+                        <Text>Content  for Tab 2</Text>
+                      </View>,
+                      <View key={2}  style={styles.tab_content}>
+                        <Text>Content for Tab 3</Text>
+                      </View>,
+                      <View key={3}  style={styles.tab_content}>
+                        <Text>Content for Tab 4</Text>
+                      </View>,
   ];
 
   const links1 = [
     { url: 'https://test1.com', text: '118图库' },
     { url: 'https://test2.com', text: '123开奖' },
-    { url: 'https://test3.com', text: '王中王' },
-    { url: 'https://test4.com', text: '王中王' },
-    { url: 'https://test5.com', text: '王中王' },
-    { url: 'https://test9.com', text: '王中王' },
-    { url: 'https://test9.com', text: '王中王' },
-   
+    { url: 'https://test2.com', text: '王中王' },
+    { url: 'https://test2.com', text: '澳彩网' },
   ];
   const links2 = [
     { url: 'https://test1.com', text: '118图库' },
@@ -204,49 +209,27 @@ export const Gallery = () => {
     { url: 'https://test2.com', text: '澳彩网' },
   ];
   
-  // const LinkContainer = ({ links }) => {
-  //   const linkRows = [];
-  //   const linksPerRow = 4;
-  
-  //   for (let i = 0; i < links.length; i += linksPerRow) {
-  //     const rowLinks = links.slice(i, i + linksPerRow);
-  //     const row = (
-  //       <View key={i} style={styles3.row}>
-  //         {rowLinks.map((link, index) => (
-  //           <TouchableOpacity key={index} style={styles3.button}>
-  //             <OpenLink
-  //               url={link.url}
-  //               buttonStyle={{ backgroundColor: '#f5f5f5' }}
-  //               linkStyle={{ color: 'black' }}
-  //               text={link.text}
-  //             />
-  //           </TouchableOpacity>
-  //         ))}
-  //       </View>
-  //     );
-  //     linkRows.push(row);
-  //   }
-  
-  //   return <View>{linkRows}</View>;
-  // };
-  
-  // const styles3 = StyleSheet.create({
-  //   row: {
-  //     flexDirection: 'row',
-  //     justifyContent: 'space-between',
-  //   },
-  //   button: {
-  //     flex: 1,
-  //     margin: 5,
-  //   },
-  // });
-  
-  
-  
-  
-  
+  const LinkContainer = ({links}) => {
 
-
+    return (
+      <View style={linkbutton.linkContainer}>
+        <View style={linkbutton.linkContainer3}>
+            {links.map((link, index) => (
+            <TouchableOpacity style={styles.button}>
+                <OpenLink
+                  key={index}
+                  url={link.url}
+                  buttonStyle={{ backgroundColor: '#f5f5f5' }} // Define the button styles
+                  linkStyle={{ color: 'black' }} // Define the text/link styles
+                  text={link.text}
+                />
+            </TouchableOpacity>
+              ))}
+          </View>
+          
+      </View>
+    );
+    };
 
   
    
@@ -283,15 +266,13 @@ export const Gallery = () => {
     
 <View>
 </View>
-
-
     <View style={{marginTop:-35,padding:10,backgroundColor:'white'}}>
+
     <CustomTabs tabs={tabNames} content={tabContent}/>
 
     <View style={linkbutton.linkMainContainer}>
-    <LinkRequest apiUrl={link.LINK_AU} keyname='k'/>
-
-      {/* <LinkContainer key={0} links = {links1} /> */}
+      <LinkContainer links = {links1} />
+      <LinkContainer links = {links2} />
    </View>
    </View>
 
@@ -396,9 +377,10 @@ export const Gallery = () => {
        
     </View>   
 
-        <View style={[styles.responsiveHeight,{ backgroundColor: 'white' }]}>
+        <View style={{ height: 400, backgroundColor: 'white' }}>
         <ScrollView nestedScrollEnabled={true}> 
-           <HomeImages apiUrl={link.HOME_REQUEST_AU} />
+            <HomeImages apiUrl={HOME_REQUEST_AU} />
+          {/* <HomeImages apiUrl={HOME_REQ_1}  lotteryType={2} /> */}
 
           </ScrollView>
         </View>
@@ -587,15 +569,8 @@ const styles = StyleSheet.create({
   },
   mr40:{
     marginRight:14,
-    },
-    responsiveHeight: {
-      width: '100%',
-      aspectRatio: 16 / 23, // Set your desired aspect ratio
-      backgroundColor: 'white',
-    },
+    }
   
-
-  })
+})
 
 export default Gallery
-

@@ -1,15 +1,28 @@
 import { StyleSheet, Text, View,Image,TouchableOpacity } from 'react-native'
-import React from 'react'
-
+import React, { useState,useEffect } from 'react';
+import Gallery,{setTab1} from '../screens/Tabs/Gallery';
 const FloaterBottom = () => {
+ 
+  const [buttonText, setButtonText] = useState('Press me');
+
+  const handlePress = () => {
+    // Change the text when ChildComponent is pressed
+    setTab1('New Text');
+  };
+
   return (
     <View style={styles.container}>
-         <TouchableOpacity style={{flexDirection:'row',backgroundColor:'#23C475',borderRadius:10,width:70,height:40,justifyContent:'center',alignItems:'center'}}>
+         <TouchableOpacity onPress={handlePress}
+         style={{flexDirection:'row',backgroundColor:'#23C475',borderRadius:10,width:70,height:40,justifyContent:'center',alignItems:'center'}}
+         >
+          
            <Image source={require('../assets/icons/set1.png')} style={styles.icon} />
            <Text style={{textAlign:'center'}}>澳彩</Text>
          </TouchableOpacity>
 
-         <TouchableOpacity style={{flexDirection:'row',backgroundColor:'white',borderRadius:10,borderWidth:1,borderColor:'#c10707',width:70,height:40,justifyContent:'center',alignItems:'center',marginLeft:5}}>
+         <TouchableOpacity 
+         onPress={() => alert('Pressed!')}
+         style={{flexDirection:'row',backgroundColor:'white',borderRadius:10,borderWidth:1,borderColor:'#c10707',width:70,height:40,justifyContent:'center',alignItems:'center',marginLeft:5}}>
            <Image source={require('../assets/icons/set2.png')} style={styles.icon} />
            <Text style={{textAlign:'center'}}>港彩</Text>
          </TouchableOpacity>

@@ -16,12 +16,11 @@ export const Request_Balls = ({ apiUrl, keyname }) => {
       try {
         const response = await fetch(apiUrl);
         const result = await response.json();
-
+console.log(apiUrl);
         // console.log(JSON.stringify(result));
         if (keyname in result) {
           const dataArray = result[keyname].split(',');
-          setData(dataArray);
-          // console.log(data);
+          setData(dataArray); 
 
         } else {
           console.error(`Key '${keyname}' not found in API response.`);
@@ -36,6 +35,14 @@ export const Request_Balls = ({ apiUrl, keyname }) => {
 
   return (
     <>
+    <View>
+      <View style={StyleBall.countdownContainer}>
+        <Text style={StyleBall.countdownTextBlack}> 第<Text style={StyleBall.countdownTextGreen}>{data[0]}</Text> 期</Text>
+        <Text style={[StyleBall.countdownTextRed , StyleBall.mr25]}> 距下期开奖:12:34:01</Text>
+        <Text style={StyleBall.countdownTextGreen}>查看历史记录</Text>
+      </View>
+    </View>
+    <View style={StyleBall.ballContainer}>
       {data.map((item, index) => {
          const parsedItem = parseInt(item)-1;
          const isValidIndex = !isNaN(parsedItem) && parsedItem >= 0 && parsedItem < ballConverter.length;
@@ -109,12 +116,18 @@ export const Request_Balls = ({ apiUrl, keyname }) => {
 
         } 
       })}
+   
+    </View>
+    <View style={StyleBall.cameraContainer}>
+      <Image source={require('../../assets/icons/ic_camera.webp')} style={[StyleBall.ic_camera]} />
+      <Text style={[StyleBall.cameraTextRed]}> 第{data[8]}期 2023/{data[9]}/{data[10]} 星期 -  {data[12]}</Text>
+      <Image source={require('../../assets/icons/ic_full.webp')} style={[StyleBall.ic_full, StyleBall.mr14 ]} />
+    </View>
     </>
   );
 };
 
 
-export default Request_Balls;
 
 export const BallWithText = ({ text, imageSource,count }) => {
   return (
@@ -148,17 +161,54 @@ const StyleBall = StyleSheet.create({
     paddingTop:15,
     alignItems: 'center',
     justifyContent: 'center',
+  },countdownContainer:{
+    marginBottom:15,
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      width: '100%',
+  },cameraContainer:{
+    marginTop:15,
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      width: '100%',
+  },
+  cameraTextRed:{
+    fontSize: 14, color: 'red',paddingTop:3,
+  },
+  ic_camera:{
+    width:25,height:25
+  },
+  ic_full:{
+    width:20,height:20
+  },
+  mr25:{
+    marginRight:25,
+    }, mr14:{
+      marginRight:14,
+      },
+  countdownTextGreen:{
+    fontWeight: '500',
+    fontSize: 15, color: 'green'
+  },
+  countdownTextBlack:{
+    fontWeight: '500',
+    fontSize: 15, color: 'black'
+  },
+  countdownTextRed:{
+    fontWeight: '500',
+    fontSize: 15, color: 'red'
   },
   ballImage: {
-    width:50,
-    height:50
+    width:'100%',
+    aspectRatio: 8 / 8, // Set your desired aspect ratio
+
     // Adjust the styles for the ball image as needed
   },plusImage: {
     alignContent:'center',
     justifyContent: 'center',
     alignItems: 'center',
     width:20,
-    height:20
+    height:20,
   },
   centeredText: {
     position: 'absolute',
@@ -193,3 +243,4 @@ const StyleBall = StyleSheet.create({
   },
 });
 
+export default Request_Balls;
