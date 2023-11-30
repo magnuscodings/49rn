@@ -1,7 +1,8 @@
-{
+{"name": "49gallery",
+"displayName": "49gallery",
   "expo": {
     "name": "49gallery",
-    "slug": "49gallery",
+    "slug": "test49",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -21,10 +22,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "unite_49.com"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "02e4cb04-81b4-4459-954f-f9e0e93db8a9"
+      }
     }
   }
 }

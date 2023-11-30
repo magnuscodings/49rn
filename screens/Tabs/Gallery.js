@@ -392,14 +392,6 @@ const Gallery = () => {
             </View>
             <View >
           <HomeImages apiUrl={HOME_REQUEST_AU}/>
-              
-            {/* {imageArray.map((image, index) => (
-                  <View key={index} style={styles.cardContainer}>
-                    <Image source={{ uri: image }} style={styles.cardBackground}/>
-                    <Text style={styles.cardText}>{textArray[index] }</Text>
-                  </View>
-                
-                ))} */}
                 <View>
          </View>
             </View>
